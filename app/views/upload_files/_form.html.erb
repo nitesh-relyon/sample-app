@@ -1,0 +1,25 @@
+<div class="col-lg-4 col-md-4 col-sm-4 container justify-content-center">
+  <%= form_with(model: upload_file, local: true) do |f| %>
+    <div class="form-outline mb-4">
+      <h2 align="center">Upload File</h2>
+    </div>
+    <div class="form-outline mb-4">
+      <%= f.text_field :name, autofocus: true, required: true, autocomplete: "off", class: "form-control", placeholder: "File Name" %>
+    </div>
+
+    <div class="form-outline mb-4">
+      <%= f.text_field :description, autocomplete: "off", required: true, class: "form-control", placeholder: "Description" %>
+    </div>
+    <div class="form-outline mb-4">
+      <%= f.file_field :file, autocomplete: "off", required: true, class: "form-control"%>
+    </div>
+
+    <div class="form-outline mb-4">
+      <%= f.text_field :tags, autocomplete: "off", required: true, class: "form-control", placeholder: "Add Tag"%>
+    </div>
+
+    <div class="form-outline mb-4">
+      <%= f.submit "Submit", class: "btn btn-outline-primary btn-block mb-4" %>
+    </div>
+  <% end %>
+</div>

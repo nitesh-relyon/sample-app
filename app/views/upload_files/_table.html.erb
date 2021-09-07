@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>Sl No</th>
+        <th>File Name</th>
+        <th>Description</th>
+        <th>File Type</th>
+        <th>Tag</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @files.each_with_index do |file, count| %>
+        <tr>
+          <td><%= (count + 1) %></td>
+          <td><%= file.name %></td>
+          <td><%= file.description %></td>
+          <td><%= file.file.file.extension.downcase %></td>
+          <td><%= link_to "#{file.tags}", same_tag_files_upload_files_path(file)%></td>
+          <td><%= link_to 'Download file', file.file.url, target: "_blank" %></td>
+          <td><%= link_to "DELETE", file , :method => :delete, class: "btn btn-danger", data: {:confirm => 'Are you sure?'} %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+</div>

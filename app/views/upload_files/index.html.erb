@@ -1,0 +1,8 @@
+<div class="container-fluid">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <a><%= link_to 'Upload File', new_upload_file_path, class: "btn btn-outline-primary"%></a>
+    </div>
+    <h3 align="center">All Uploaded File Details</h3>
+    <%= render 'table' %>
+  </div>
+</div>
